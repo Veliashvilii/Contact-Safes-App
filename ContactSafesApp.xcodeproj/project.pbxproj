@@ -10,7 +10,10 @@
 		B97752CC2CFBC4F000D0B647 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B97752CB2CFBC4F000D0B647 /* SnapKit */; };
 		B97752CF2CFBC50200D0B647 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B97752CE2CFBC50200D0B647 /* Swinject */; };
 		B97752D22CFBC51100D0B647 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B97752D12CFBC51100D0B647 /* Kingfisher */; };
-		B97752D82CFBC55E00D0B647 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B97752D72CFBC55E00D0B647 /* Realm */; };
+		B97753042CFBC81900D0B647 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B97753032CFBC81900D0B647 /* RealmSwift */; };
+		B97753052CFBC81900D0B647 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B97753032CFBC81900D0B647 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B977530B2CFBCD5300D0B647 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B977530A2CFBCD5300D0B647 /* RealmSwift */; };
+		B977530C2CFBCD5300D0B647 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B977530A2CFBCD5300D0B647 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -29,6 +32,31 @@
 			remoteInfo = ContactSafesApp;
 		};
 /* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		B97753022CFBC80600D0B647 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B97753052CFBC81900D0B647 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B977530D2CFBCD5300D0B647 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B977530C2CFBCD5300D0B647 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		B97752942CFBC3C100D0B647 /* ContactSafesApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ContactSafesApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -74,8 +102,8 @@
 			files = (
 				B97752D22CFBC51100D0B647 /* Kingfisher in Frameworks */,
 				B97752CC2CFBC4F000D0B647 /* SnapKit in Frameworks */,
+				B97753042CFBC81900D0B647 /* RealmSwift in Frameworks */,
 				B97752CF2CFBC50200D0B647 /* Swinject in Frameworks */,
-				B97752D82CFBC55E00D0B647 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -83,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B977530B2CFBCD5300D0B647 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -102,6 +131,7 @@
 				B97752962CFBC3C100D0B647 /* ContactSafesApp */,
 				B97752AD2CFBC3C200D0B647 /* ContactSafesAppTests */,
 				B97752B72CFBC3C200D0B647 /* ContactSafesAppUITests */,
+				B97752FE2CFBC80600D0B647 /* Frameworks */,
 				B97752952CFBC3C100D0B647 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -116,6 +146,13 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
+		B97752FE2CFBC80600D0B647 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -127,6 +164,7 @@
 				B97752912CFBC3C100D0B647 /* Frameworks */,
 				B97752922CFBC3C100D0B647 /* Resources */,
 				B97752DB2CFBC5A000D0B647 /* SwiftLint */,
+				B97753022CFBC80600D0B647 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -140,7 +178,7 @@
 				B97752CB2CFBC4F000D0B647 /* SnapKit */,
 				B97752CE2CFBC50200D0B647 /* Swinject */,
 				B97752D12CFBC51100D0B647 /* Kingfisher */,
-				B97752D72CFBC55E00D0B647 /* Realm */,
+				B97753032CFBC81900D0B647 /* RealmSwift */,
 			);
 			productName = ContactSafesApp;
 			productReference = B97752942CFBC3C100D0B647 /* ContactSafesApp.app */;
@@ -153,6 +191,7 @@
 				B97752A62CFBC3C200D0B647 /* Sources */,
 				B97752A72CFBC3C200D0B647 /* Frameworks */,
 				B97752A82CFBC3C200D0B647 /* Resources */,
+				B977530D2CFBCD5300D0B647 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -164,6 +203,7 @@
 			);
 			name = ContactSafesAppTests;
 			packageProductDependencies = (
+				B977530A2CFBCD5300D0B647 /* RealmSwift */,
 			);
 			productName = ContactSafesAppTests;
 			productReference = B97752AA2CFBC3C200D0B647 /* ContactSafesAppTests.xctest */;
@@ -229,7 +269,7 @@
 				B97752CD2CFBC50200D0B647 /* XCRemoteSwiftPackageReference "Swinject" */,
 				B97752D02CFBC51100D0B647 /* XCRemoteSwiftPackageReference "Kingfisher" */,
 				B97752D32CFBC52B00D0B647 /* XCRemoteSwiftPackageReference "SwiftLint" */,
-				B97752D62CFBC55E00D0B647 /* XCRemoteSwiftPackageReference "realm-swift" */,
+				B97752F92CFBC7E700D0B647 /* XCRemoteSwiftPackageReference "realm-swift" */,
 			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B97752952CFBC3C100D0B647 /* Products */;
@@ -645,7 +685,7 @@
 				minimumVersion = 0.57.1;
 			};
 		};
-		B97752D62CFBC55E00D0B647 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+		B97752F92CFBC7E700D0B647 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/realm/realm-swift";
 			requirement = {
@@ -671,10 +711,15 @@
 			package = B97752D02CFBC51100D0B647 /* XCRemoteSwiftPackageReference "Kingfisher" */;
 			productName = Kingfisher;
 		};
-		B97752D72CFBC55E00D0B647 /* Realm */ = {
+		B97753032CFBC81900D0B647 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = B97752D62CFBC55E00D0B647 /* XCRemoteSwiftPackageReference "realm-swift" */;
-			productName = Realm;
+			package = B97752F92CFBC7E700D0B647 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		B977530A2CFBCD5300D0B647 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B97752F92CFBC7E700D0B647 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
