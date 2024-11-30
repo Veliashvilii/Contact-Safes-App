@@ -12,6 +12,8 @@
 		B97752D22CFBC51100D0B647 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B97752D12CFBC51100D0B647 /* Kingfisher */; };
 		B97753042CFBC81900D0B647 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B97753032CFBC81900D0B647 /* RealmSwift */; };
 		B97753052CFBC81900D0B647 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B97753032CFBC81900D0B647 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
+		B977530B2CFBCD5300D0B647 /* RealmSwift in Frameworks */ = {isa = PBXBuildFile; productRef = B977530A2CFBCD5300D0B647 /* RealmSwift */; };
+		B977530C2CFBCD5300D0B647 /* RealmSwift in Embed Frameworks */ = {isa = PBXBuildFile; productRef = B977530A2CFBCD5300D0B647 /* RealmSwift */; settings = {ATTRIBUTES = (CodeSignOnCopy, ); }; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -39,6 +41,17 @@
 			dstSubfolderSpec = 10;
 			files = (
 				B97753052CFBC81900D0B647 /* RealmSwift in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B977530D2CFBCD5300D0B647 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				B977530C2CFBCD5300D0B647 /* RealmSwift in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -98,6 +111,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B977530B2CFBCD5300D0B647 /* RealmSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -177,6 +191,7 @@
 				B97752A62CFBC3C200D0B647 /* Sources */,
 				B97752A72CFBC3C200D0B647 /* Frameworks */,
 				B97752A82CFBC3C200D0B647 /* Resources */,
+				B977530D2CFBCD5300D0B647 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
@@ -188,6 +203,7 @@
 			);
 			name = ContactSafesAppTests;
 			packageProductDependencies = (
+				B977530A2CFBCD5300D0B647 /* RealmSwift */,
 			);
 			productName = ContactSafesAppTests;
 			productReference = B97752AA2CFBC3C200D0B647 /* ContactSafesAppTests.xctest */;
@@ -696,6 +712,11 @@
 			productName = Kingfisher;
 		};
 		B97753032CFBC81900D0B647 /* RealmSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B97752F92CFBC7E700D0B647 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = RealmSwift;
+		};
+		B977530A2CFBCD5300D0B647 /* RealmSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = B97752F92CFBC7E700D0B647 /* XCRemoteSwiftPackageReference "realm-swift" */;
 			productName = RealmSwift;

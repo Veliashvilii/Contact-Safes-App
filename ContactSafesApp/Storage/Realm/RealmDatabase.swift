@@ -31,7 +31,7 @@ final class RealmDatabase: LocalDatabaseProtocol {
             realm.deleteAll()
         }
     }
-    func items<T>() -> [T] where T: Object {
+    func items<T: Object>() -> [T] {
         return realm.objects(T.self).map { $0 }
     }
     func delete<T>(model: T) where T: Object {
@@ -41,7 +41,7 @@ final class RealmDatabase: LocalDatabaseProtocol {
     }
     func deleteFromId<T>(model: T.Type, id: String) where T: Object {
         guard let objectId = try? ObjectId(string: id) else { return }
-        let item = realm.objects(model.self).filter("_id == %@", objectId)
+        let item = realm.objects(model.self).filter("id == %@", objectId)
         try? realm.write({
             realm.delete(item)
         })
