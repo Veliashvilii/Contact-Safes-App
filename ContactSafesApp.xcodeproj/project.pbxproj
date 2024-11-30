@@ -6,6 +6,13 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		B97752CC2CFBC4F000D0B647 /* SnapKit in Frameworks */ = {isa = PBXBuildFile; productRef = B97752CB2CFBC4F000D0B647 /* SnapKit */; };
+		B97752CF2CFBC50200D0B647 /* Swinject in Frameworks */ = {isa = PBXBuildFile; productRef = B97752CE2CFBC50200D0B647 /* Swinject */; };
+		B97752D22CFBC51100D0B647 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = B97752D12CFBC51100D0B647 /* Kingfisher */; };
+		B97752D82CFBC55E00D0B647 /* Realm in Frameworks */ = {isa = PBXBuildFile; productRef = B97752D72CFBC55E00D0B647 /* Realm */; };
+/* End PBXBuildFile section */
+
 /* Begin PBXContainerItemProxy section */
 		B97752AB2CFBC3C200D0B647 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -65,6 +72,10 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B97752D22CFBC51100D0B647 /* Kingfisher in Frameworks */,
+				B97752CC2CFBC4F000D0B647 /* SnapKit in Frameworks */,
+				B97752CF2CFBC50200D0B647 /* Swinject in Frameworks */,
+				B97752D82CFBC55E00D0B647 /* Realm in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -115,6 +126,7 @@
 				B97752902CFBC3C100D0B647 /* Sources */,
 				B97752912CFBC3C100D0B647 /* Frameworks */,
 				B97752922CFBC3C100D0B647 /* Resources */,
+				B97752DB2CFBC5A000D0B647 /* SwiftLint */,
 			);
 			buildRules = (
 			);
@@ -125,6 +137,10 @@
 			);
 			name = ContactSafesApp;
 			packageProductDependencies = (
+				B97752CB2CFBC4F000D0B647 /* SnapKit */,
+				B97752CE2CFBC50200D0B647 /* Swinject */,
+				B97752D12CFBC51100D0B647 /* Kingfisher */,
+				B97752D72CFBC55E00D0B647 /* Realm */,
 			);
 			productName = ContactSafesApp;
 			productReference = B97752942CFBC3C100D0B647 /* ContactSafesApp.app */;
@@ -208,6 +224,13 @@
 			);
 			mainGroup = B977528B2CFBC3C100D0B647;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				B97752CA2CFBC4F000D0B647 /* XCRemoteSwiftPackageReference "SnapKit" */,
+				B97752CD2CFBC50200D0B647 /* XCRemoteSwiftPackageReference "Swinject" */,
+				B97752D02CFBC51100D0B647 /* XCRemoteSwiftPackageReference "Kingfisher" */,
+				B97752D32CFBC52B00D0B647 /* XCRemoteSwiftPackageReference "SwiftLint" */,
+				B97752D62CFBC55E00D0B647 /* XCRemoteSwiftPackageReference "realm-swift" */,
+			);
 			preferredProjectObjectVersion = 77;
 			productRefGroup = B97752952CFBC3C100D0B647 /* Products */;
 			projectDirPath = "";
@@ -243,6 +266,27 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		B97752DB2CFBC5A000D0B647 /* SwiftLint */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+			);
+			name = SwiftLint;
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "export PATH=\"$PATH:/opt/homebrew/bin\"\n\nif which swiftlint > /dev/null; then\n    swiftlint\nelse\n    echo \"warning: SwiftLint is not installed, download from https://github.com/realm/SwiftLint\"\nfi\n";
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		B97752902CFBC3C100D0B647 /* Sources */ = {
@@ -373,7 +417,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -436,7 +480,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -567,6 +611,72 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B97752CA2CFBC4F000D0B647 /* XCRemoteSwiftPackageReference "SnapKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SnapKit/SnapKit.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.7.1;
+			};
+		};
+		B97752CD2CFBC50200D0B647 /* XCRemoteSwiftPackageReference "Swinject" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/Swinject/Swinject";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 2.9.1;
+			};
+		};
+		B97752D02CFBC51100D0B647 /* XCRemoteSwiftPackageReference "Kingfisher" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/onevcat/Kingfisher";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 8.1.1;
+			};
+		};
+		B97752D32CFBC52B00D0B647 /* XCRemoteSwiftPackageReference "SwiftLint" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/SwiftLint";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.57.1;
+			};
+		};
+		B97752D62CFBC55E00D0B647 /* XCRemoteSwiftPackageReference "realm-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/realm/realm-swift";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		B97752CB2CFBC4F000D0B647 /* SnapKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B97752CA2CFBC4F000D0B647 /* XCRemoteSwiftPackageReference "SnapKit" */;
+			productName = SnapKit;
+		};
+		B97752CE2CFBC50200D0B647 /* Swinject */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B97752CD2CFBC50200D0B647 /* XCRemoteSwiftPackageReference "Swinject" */;
+			productName = Swinject;
+		};
+		B97752D12CFBC51100D0B647 /* Kingfisher */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B97752D02CFBC51100D0B647 /* XCRemoteSwiftPackageReference "Kingfisher" */;
+			productName = Kingfisher;
+		};
+		B97752D72CFBC55E00D0B647 /* Realm */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = B97752D62CFBC55E00D0B647 /* XCRemoteSwiftPackageReference "realm-swift" */;
+			productName = Realm;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = B977528C2CFBC3C100D0B647 /* Project object */;
 }
