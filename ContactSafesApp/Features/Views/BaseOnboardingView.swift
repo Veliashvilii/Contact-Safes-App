@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-class BaseOnboardingView: BaseView<OnBoardingViewController> {
+final class BaseOnboardingView: BaseView<OnBoardingViewController> {
     // MARK: - Delegate
     weak var delegate: OnBoardingDelegate?
     

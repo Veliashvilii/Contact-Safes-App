@@ -8,10 +8,12 @@
 import UIKit
 
 class HomePageViewController: UIViewController {
+    
+    private var homePageView: HomePageView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
+        homePageView = HomePageView(self)
+        view = homePageView
     }
-
 }
