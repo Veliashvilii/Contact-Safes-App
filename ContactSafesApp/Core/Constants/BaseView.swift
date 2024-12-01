@@ -7,19 +7,26 @@
 
 import UIKit
 
-class BaseView<T: UIViewController>: UIView, MainThreadRunner {
-    var viewController: T
-    
-    init(_ viewController: T) {
-        self.viewController = viewController
+class BaseView<T: UIViewController>: UIView {
+    var controller: T
+
+    init(_ controller: T) {
+        self.controller = controller
         super.init(frame: .zero)
+        backgroundColor = appTheme.colorTheme.backgroundColor
         setupView()
     }
     
-    func setupView() {
-        backgroundColor = ThemeColor.defaultTheme.backgroundColor
+    var appTheme: AppTheme {
+        ThemeManager.deafultTheme
     }
     
+    static var currentTheme: AppTheme {
+        ThemeManager.deafultTheme
+    }
+    
+
+    func setupView() { }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
