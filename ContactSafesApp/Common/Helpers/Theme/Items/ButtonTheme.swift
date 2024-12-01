@@ -17,10 +17,10 @@ struct ButtonTheme {
 extension ButtonTheme {
     static var defaultTheme: ButtonTheme {
         return ButtonTheme(
-            font: <#T##UIFont#>,
-            textColor: <#T##UIColor#>,
-            backgroundColor: <#T##UIColor#>,
-            maximumLine: <#T##Int#>
+            font: ThemeFont.defaultTheme.titleFont,
+            textColor: ThemeColor.defaultTheme.primaryColor,
+            backgroundColor: ThemeColor.defaultTheme.secondaryColor,
+            maximumLine: 2
         )
     }
 }

@@ -6,3 +6,7 @@
 //
 
 import Foundation
+
+struct ThemeManager {
+    static let deafultTheme: AppTheme = LighTheme()
+}
