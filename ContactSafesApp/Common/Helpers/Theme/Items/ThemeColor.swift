@@ -13,6 +13,7 @@ struct ThemeColor {
     let errorColor: UIColor
     let textColor: UIColor
     let buttonTextColor: UIColor
+    let backgroundColor: UIColor
 }
 
 extension ThemeColor {
@@ -21,8 +22,9 @@ extension ThemeColor {
             primaryColor: .primary,
             secondaryColor: .darkGray,
             errorColor: .red,
-            textColor: .primarytext,
-            buttonTextColor: .buttonText
+            textColor: .secondary,
+            buttonTextColor: .buttonText,
+            backgroundColor: .background
         )
     }
 }

@@ -20,19 +20,16 @@ extension MainThreadRunner {
             }
             return
         }
-        
         block()
     }
-    
     func runOnMainSafety(_ block: @escaping () -> Void) {
         guard Thread.isMainThread else {
             DispatchQueue.main.async { [weak self] in
-                guard let _self = self else { return }
+                guard let self = self else { return }
                 block()
             }
             return
         }
-        
         block()
     }
 }
