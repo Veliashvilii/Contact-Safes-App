@@ -9,17 +9,15 @@ import UIKit
 
 class OnBoardingViewController: UIViewController {
     
-    private var onBoardingView: OnBoardingSecondPageView?
+    private var onBoardingView: OnBoardingThirdPageView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        onBoardingView = OnBoardingSecondPageView(self)
+        onBoardingView = OnBoardingThirdPageView(self)
         view = onBoardingView
     }
 }
 
-/**#Preview {
+#Preview {
     OnBoardingViewController()
  }
-
-*/
