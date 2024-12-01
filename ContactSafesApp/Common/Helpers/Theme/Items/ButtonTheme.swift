@@ -18,8 +18,8 @@ extension ButtonTheme {
     static var defaultTheme: ButtonTheme {
         return ButtonTheme(
             font: ThemeFont.defaultTheme.titleFont,
-            textColor: ThemeColor.defaultTheme.primaryColor,
-            backgroundColor: ThemeColor.defaultTheme.secondaryColor,
+            textColor: ThemeColor.defaultTheme.buttonTextColor,
+            backgroundColor: ThemeColor.defaultTheme.primaryColor,
             maximumLine: 2
         )
     }

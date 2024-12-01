@@ -21,7 +21,8 @@ struct ThemeFont {
         static let fontFamily: String = "Poppins"
 
         func value(fontSize: CustomFontSize) -> UIFont {
-            return UIFont(name: "\(CustomFont.fontFamily)-\(rawValue)", size: fontSize.rawValue)!
+            let formattedRawValue = rawValue.prefix(1).uppercased() + rawValue.dropFirst()
+            return UIFont(name: "\(CustomFont.fontFamily)-\(formattedRawValue)", size: fontSize.rawValue)!
         }
     }
 

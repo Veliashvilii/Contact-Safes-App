@@ -21,7 +21,7 @@ extension TextFieldTheme {
             font: ThemeFont.defaultTheme.subTitleFont,
             textColor: ThemeColor.defaultTheme.textColor,
             placeHolderColor: ThemeColor.defaultTheme.secondaryColor,
-            backgroundColor: ThemeColor.defaultTheme.primaryColor,
+            backgroundColor: .systemBackground,
             radius: 10
         )
     }

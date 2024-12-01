@@ -12,15 +12,17 @@ struct ThemeColor {
     let secondaryColor: UIColor
     let errorColor: UIColor
     let textColor: UIColor
+    let buttonTextColor: UIColor
 }
 
 extension ThemeColor {
     static var defaultTheme: ThemeColor {
         return ThemeColor(
-            primaryColor: .systemMint,
+            primaryColor: .primary,
             secondaryColor: .darkGray,
             errorColor: .red,
-            textColor: .blue
+            textColor: .primarytext,
+            buttonTextColor: .buttonText
         )
     }
 }
