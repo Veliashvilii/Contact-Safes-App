@@ -52,8 +52,8 @@ final class HomePageView: BaseView<HomePageViewController> {
 
     private func setupNavigationBar() {
         configureNavigationBar(
-            title: "Contact Safes.",
-            highlightedWord: "Safes"
+            title: NavBarTitle.title.rawValue,
+            highlightedWord: NavBarTitle.highlightedWord.rawValue
         )
     }
 
