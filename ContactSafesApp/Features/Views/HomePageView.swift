@@ -9,7 +9,7 @@ import UIKit
 
 final class HomePageView: BaseView<HomePageViewController> {
     // MARK: - Delegate
-    weak var delegate: OnBoardingDelegate?
+    weak var delegate: BaseViewDelegate?
     
     private lazy var homePageButton: UIButton = {
         let button = UIButton()
@@ -24,8 +24,8 @@ final class HomePageView: BaseView<HomePageViewController> {
         
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 5, height: 5)
-        button.layer.shadowOpacity = 0.3
-        button.layer.shadowRadius = 10
+        button.layer.shadowOpacity = ShadowOpacity.small.size
+        button.layer.shadowRadius = ShadowRadius.small.size
         
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
@@ -51,6 +51,6 @@ final class HomePageView: BaseView<HomePageViewController> {
 
     // MARK: - Targets
     @objc private func buttonTapped() {
-        print("Button Tapped")
+        delegate?.didTapButton()
     }
 }

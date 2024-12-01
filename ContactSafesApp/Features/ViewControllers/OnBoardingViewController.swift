@@ -40,7 +40,7 @@ class OnBoardingViewController: UIViewController, NavigationView, MainThreadRunn
     }
 }
 
-extension OnBoardingViewController: OnBoardingDelegate {
+extension OnBoardingViewController: BaseViewDelegate {
     func didTapButton() {
         switch currentPage {
         case .first:
