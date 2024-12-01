@@ -9,12 +9,17 @@ import UIKit
 
 class BaseView<T: UIViewController>: UIView {
     var controller: T
+    weak var delegate: BaseViewDelegate?
 
     init(_ controller: T) {
         self.controller = controller
         super.init(frame: .zero)
         backgroundColor = appTheme.colorTheme.backgroundColor
         setupView()
+    }
+    
+    deinit {
+        delegate = nil
     }
     
     var appTheme: AppTheme {

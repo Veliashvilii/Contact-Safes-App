@@ -14,6 +14,16 @@ class HomePageViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         homePageView = HomePageView(self)
+        homePageView?.delegate = self
         view = homePageView
     }
+}
+
+extension HomePageViewController: BaseViewDelegate {
+    func didTapButton() {
+        // TODO: - Will Send Messages
+        print("Will Send Messages")
+    }
+    
+    
 }

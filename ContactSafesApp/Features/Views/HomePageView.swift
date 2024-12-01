@@ -9,7 +9,7 @@ import UIKit
 
 final class HomePageView: BaseView<HomePageViewController> {
     // MARK: - Delegate
-    weak var delegate: BaseViewDelegate?
+    //weak var delegate: BaseViewDelegate?
     
     private lazy var homePageButton: UIButton = {
         let button = UIButton()

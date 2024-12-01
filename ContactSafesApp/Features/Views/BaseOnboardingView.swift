@@ -10,7 +10,7 @@ import SnapKit
 
 final class BaseOnboardingView: BaseView<OnBoardingViewController> {
     // MARK: - Delegate
-    weak var delegate: BaseViewDelegate?
+    //weak var delegate: BaseViewDelegate?
     
     // MARK: - Properties
     private let slide: OnboardingSlide
