@@ -8,5 +8,5 @@
 import UIKit
 
 protocol OnBoardingDelegate: AnyObject {
-    func didTapButton(_ view: UIView)
+    func didTapButton()
 }

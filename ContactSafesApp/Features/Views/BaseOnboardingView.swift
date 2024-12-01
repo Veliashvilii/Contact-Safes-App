@@ -114,7 +114,7 @@ class BaseOnboardingView: BaseView<OnBoardingViewController> {
     
     // MARK: - Actions
     @objc private func buttonTapped() {
-        delegate?.didTapButton(self)
+        delegate?.didTapButton()
     }
 }
 
