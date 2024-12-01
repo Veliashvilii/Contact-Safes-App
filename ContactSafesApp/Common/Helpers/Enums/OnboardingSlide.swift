@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import UIKit
 
 enum OnboardingSlide {
     case first
@@ -45,4 +46,14 @@ enum OnboardingSlide {
         }
     }
     
+    var image: UIImage? {
+        switch self {
+        case .first:
+            return .onboardingImage1
+        case .second:
+            return .onboardingImage2
+        case .third:
+            return .onboardingImage3
+        }
+    }
 }
