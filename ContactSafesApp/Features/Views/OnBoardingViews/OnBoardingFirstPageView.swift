@@ -17,7 +17,7 @@ final class OnBoardingFirstPageView: BaseView<OnBoardingViewController> {
     private let onBoardingImageView: UIImageView = {
         let imageView = UIImageView(image: .onboardingImage1)
         imageView.contentMode = .scaleToFill
-        imageView.layer.cornerRadius = 50
+        imageView.layer.cornerRadius = CornerRadius.big.size
         imageView.clipsToBounds = true
         return imageView
     }()
@@ -47,7 +47,7 @@ final class OnBoardingFirstPageView: BaseView<OnBoardingViewController> {
         button.setTitle(OnboardingSlide.first.buttonTitle, for: .normal)
         button.titleLabel?.textColor = .white
         button.titleLabel?.textAlignment = .center
-        button.layer.cornerRadius = 10
+        button.layer.cornerRadius = CornerRadius.small.size
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }()
