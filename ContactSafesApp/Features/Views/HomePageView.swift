@@ -35,6 +35,7 @@ final class HomePageView: BaseView<HomePageViewController> {
         super.setupView()
         setupLayout()
         setupConstraints()
+        setupNavigationBar()
     }
 
     private func setupLayout() {
@@ -47,6 +48,13 @@ final class HomePageView: BaseView<HomePageViewController> {
             make.width.equalToSuperview().multipliedBy(0.8)
             make.height.equalToSuperview().multipliedBy(0.3)
         }
+    }
+
+    private func setupNavigationBar() {
+        configureNavigationBar(
+            title: "Contact Safes.",
+            highlightedWord: "Safes"
+        )
     }
 
     // MARK: - Targets

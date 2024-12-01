@@ -7,7 +7,7 @@
 
 import UIKit
 
-class BaseView<T: UIViewController>: UIView {
+class BaseView<T: UIViewController>: UIView, NavigationBarConfigurable {
     var controller: T
     weak var delegate: BaseViewDelegate?
 
@@ -34,5 +34,12 @@ class BaseView<T: UIViewController>: UIView {
     func setupView() { }
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func configureNavigationBar(title: String, highlightedWord: String?) {
+        controller.navigationItem.titleView = createNavigationTitleLabel(
+            title: title,
+            highlightedWord: highlightedWord
+        )
     }
 }
