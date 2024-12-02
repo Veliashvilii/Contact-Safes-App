@@ -7,7 +7,7 @@
 
 import UIKit
 
-class OnBoardingViewController: UIViewController, NavigationView, MainThreadRunner {
+final class OnBoardingViewController: UIViewController, NavigationView, MainThreadRunner {
     
     private var currentPage: OnboardingSlide = .first {
         didSet {

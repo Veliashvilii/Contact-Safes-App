@@ -10,6 +10,9 @@ import UIKit
 
 final class MyContactsView: BaseView<MyContactsViewController> {
     
+    //MARK: - Delegate
+    weak var customDelegate: MyContactsViewDelegate?
+    
     // MARK: - Attributes
     
     private let mainStackView: UIStackView = {
@@ -74,9 +77,14 @@ final class MyContactsView: BaseView<MyContactsViewController> {
     // MARK: - Setup
     override func setupView() {
         super.setupView()
+        delegate = nil
         setupNavigationBar()
         setupLayout()
         setupConstraints()
+    }
+    
+    deinit {
+        customDelegate = nil
     }
     
     private func setupLayout() {
@@ -120,10 +128,10 @@ final class MyContactsView: BaseView<MyContactsViewController> {
     // MARK: - TARGETS
     
     @objc private func addButtonTapped() {
-        print("Add Button Tapped")
+        customDelegate?.didAddButtonTapped()
     }
     
     @objc private func editMessageButtonTapped() {
-        print("Edit Button Tapped")
+        customDelegate?.didEditButtonTapped()
     }
 }
