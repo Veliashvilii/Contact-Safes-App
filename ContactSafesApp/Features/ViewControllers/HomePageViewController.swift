@@ -8,10 +8,22 @@
 import UIKit
 
 class HomePageViewController: UIViewController {
+    
+    private var homePageView: HomePageView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemPink
+        homePageView = HomePageView(self)
+        homePageView?.delegate = self
+        view = homePageView
     }
+}
 
+extension HomePageViewController: BaseViewDelegate {
+    func didTapButton() {
+        // TODO: - Will Send Messages
+        print("Will Send Messages")
+    }
+    
+    
 }

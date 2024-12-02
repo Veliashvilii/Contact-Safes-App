@@ -8,9 +8,9 @@
 import UIKit
 import SnapKit
 
-class BaseOnboardingView: BaseView<OnBoardingViewController> {
+final class BaseOnboardingView: BaseView<OnBoardingViewController> {
     // MARK: - Delegate
-    weak var delegate: OnBoardingDelegate?
+    //weak var delegate: BaseViewDelegate?
     
     // MARK: - Properties
     private let slide: OnboardingSlide
@@ -95,8 +95,8 @@ class BaseOnboardingView: BaseView<OnBoardingViewController> {
     
     private func setupConstraints() {
         imageContainerView.snp.makeConstraints { make in
-            make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
-            make.centerX.equalToSuperview()
+            //make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
+            make.centerX.centerY.equalToSuperview()
             make.width.equalTo(snp.width).multipliedBy(0.8)
             make.height.equalTo(imageContainerView.snp.width)
         }
@@ -108,7 +108,7 @@ class BaseOnboardingView: BaseView<OnBoardingViewController> {
         columnStackView.snp.makeConstraints { make in
             make.top.equalTo(imageContainerView.snp.bottom).offset(30)
             make.left.right.equalToSuperview().inset(20)
-            make.bottom.lessThanOrEqualTo(safeAreaLayoutGuide.snp.bottom).offset(-20)
+            //make.bottom.lessThanOrEqualTo(safeAreaLayoutGuide.snp.bottom).offset(-20)
         }
     }
     
