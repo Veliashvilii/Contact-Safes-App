@@ -8,11 +8,16 @@
 import UIKit
 
 class MyContactsViewController: UIViewController {
+    
+    private var myContactsView: MyContactsView?
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        view.backgroundColor = .systemPink
+        myContactsView = MyContactsView(self)
+        view = myContactsView
     }
+}
 
+#Preview {
+    MyContactsViewController()
 }
