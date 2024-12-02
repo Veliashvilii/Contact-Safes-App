@@ -50,10 +50,9 @@ extension OnBoardingViewController: BaseViewDelegate {
         case .third:
             runOnMainSafety { [weak self] in
                 guard let self = self else { return }
-                let homeVC = HomePageViewController()
+                let tabBarController = BaseTabBarController()
                 if let sceneDelegate = self.view.window?.windowScene?.delegate as? SceneDelegate {
-                    let navigationController = UINavigationController(rootViewController: homeVC)
-                    sceneDelegate.window?.rootViewController = navigationController
+                    sceneDelegate.window?.rootViewController = tabBarController
                     sceneDelegate.window?.makeKeyAndVisible()
                 }
             }
