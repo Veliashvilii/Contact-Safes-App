@@ -5,9 +5,21 @@
 //  Created by Metehan Veliashvili on 2.12.2024.
 //
 
+import RealmSwift
 import Foundation
 
-struct Contact {
-    let name: String
-    let phoneNumber: String
+final class Contact: Object {
+    @Persisted(primaryKey: true) var id: String = UUID().uuidString
+    @Persisted var name: String
+    @Persisted var phoneNumber: String
+    
+    override init() {
+        super.init()
+    }
+    
+    init(name: String, phoneNumber: String) {
+        super.init()
+        self.name = name
+        self.phoneNumber = phoneNumber
+    }
 }

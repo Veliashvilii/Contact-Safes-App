@@ -10,6 +10,9 @@ import SnapKit
 
 final class AddContactView: BaseView<AddContactViewController> {
     
+    // MARK: - Delegate
+    weak var customDelegate: AddContactViewDelegate?
+    
     // MARK: - UI Elements
     
     private lazy var topTitleLabel: UILabel = {
@@ -144,8 +147,13 @@ final class AddContactView: BaseView<AddContactViewController> {
     }
     
     @objc private func addButtonTapped() {
-        //delegate?.didTapAddButton(name: nameTextField.text, phoneNumber: phoneTextField.text)
-        print("Add Button Tapped!")
+        guard let name = nameTextField.text, let phoneNumber = phoneTextField.text else {
+            print("ERRROOOOOOOORORRRRR!!.1!:1:1")
+            print("From Adding button.")
+            print("Show Alert for name or phone number")
+            return
+        }
+        customDelegate?.didTappAddContactButton(name: name, phoneNumber: phoneNumber)
     }
     
     // MARK: - Public Methods

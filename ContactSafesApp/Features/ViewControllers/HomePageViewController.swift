@@ -24,6 +24,4 @@ extension HomePageViewController: BaseViewDelegate {
         // TODO: - Will Send Messages
         print("Will Send Messages")
     }
-    
-    
 }
