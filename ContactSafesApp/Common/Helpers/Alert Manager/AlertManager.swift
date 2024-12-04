@@ -13,7 +13,7 @@ protocol AlertManagerProtocol {
     func showAlert(title: String, subTitle: String, isQuestion: Bool)
 }
 
-//MARK: - Base Code
+// MARK: - Base Code
 final class AlertManager {
     public static let shared = AlertManager()
     private init() {}
@@ -28,7 +28,6 @@ extension AlertManager: AlertManagerProtocol {
         }
 
         let alertController = UIAlertController(title: title, message: subTitle, preferredStyle: .alert)
-        
         if (isQuestion) {
             alertController.addAction(UIAlertAction(title: "No", style: .default, handler: nil))
             alertController.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))

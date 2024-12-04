@@ -8,7 +8,6 @@
 import UIKit
 
 final class HomePageViewController: UIViewController {
-    
     private var homePageView: HomePageView?
 
     override func viewDidLoad() {

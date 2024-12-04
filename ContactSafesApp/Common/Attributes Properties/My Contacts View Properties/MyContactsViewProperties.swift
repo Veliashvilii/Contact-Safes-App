@@ -12,7 +12,6 @@ enum MyContactsViewProperties: String {
     case addButtonTitle = "Add Contact"
     case messageText = "Hi! I need some support right now. Could you please reach out to me?"
     case editButtonTitle = "Edit Message"
-    
     var text: String {
         String(self.rawValue)
     }

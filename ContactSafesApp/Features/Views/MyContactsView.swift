@@ -7,14 +7,10 @@
 
 import UIKit
 
-
 final class MyContactsView: BaseView<MyContactsViewController> {
-    
-    //MARK: - Delegate
+    // MARK: - Delegate
     weak var customDelegate: MyContactsViewDelegate?
-    
     // MARK: - Attributes
-    
     private let mainStackView: UIStackView = {
         let stack = UIStackView()
         stack.axis = .vertical
@@ -22,7 +18,6 @@ final class MyContactsView: BaseView<MyContactsViewController> {
         stack.alignment = .fill
         return stack
     }()
-    
     private lazy var topTitleLabel: UILabel = {
         let label = UILabel()
         label.text = MyContactsViewProperties.topTitle.text
@@ -32,7 +27,6 @@ final class MyContactsView: BaseView<MyContactsViewController> {
         label.textAlignment = .left
         return label
     }()
-    
     private lazy var addButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .primary
@@ -44,7 +38,6 @@ final class MyContactsView: BaseView<MyContactsViewController> {
         button.addTarget(self, action: #selector(addButtonTapped), for: .touchUpInside)
         return button
     }()
-    
     private let messageView: UIView = {
         let view = UIView()
         view.backgroundColor = .white
@@ -55,7 +48,6 @@ final class MyContactsView: BaseView<MyContactsViewController> {
         view.layer.shadowRadius = ShadowRadius.small.size
         return view
     }()
-    
     private let messageLabel: UILabel = {
         let label = UILabel()
         label.text = MyContactsViewProperties.messageText.text
@@ -64,7 +56,6 @@ final class MyContactsView: BaseView<MyContactsViewController> {
         label.font = .systemFont(ofSize: 16)
         return label
     }()
-    
     private let editMessageButton: UIButton = {
         let button = UIButton()
         button.setTitle(MyContactsViewProperties.editButtonTitle.text, for: .normal)
@@ -73,7 +64,6 @@ final class MyContactsView: BaseView<MyContactsViewController> {
         button.addTarget(self, action: #selector(editMessageButtonTapped), for: .touchUpInside)
         return button
     }()
-    
     // MARK: - Setup
     override func setupView() {
         super.setupView()
@@ -82,55 +72,43 @@ final class MyContactsView: BaseView<MyContactsViewController> {
         setupLayout()
         setupConstraints()
     }
-    
     deinit {
         customDelegate = nil
     }
-    
     private func setupLayout() {
         addSubview(mainStackView)
         [topTitleLabel, addButton, messageView].forEach {
             mainStackView.addArrangedSubview($0)
         }
-        
         messageView.addSubview(messageLabel)
         messageView.addSubview(editMessageButton)
     }
-    
     private func setupConstraints() {
         mainStackView.snp.makeConstraints { make in
             make.top.equalTo(safeAreaLayoutGuide).offset(24)
             make.leading.trailing.equalToSuperview().inset(24)
         }
-        
         addButton.snp.makeConstraints { make in
             make.height.equalTo(50)
         }
-        
         messageLabel.snp.makeConstraints { make in
             make.top.leading.trailing.equalToSuperview().inset(16)
         }
-        
         editMessageButton.snp.makeConstraints { make in
             make.top.equalTo(messageLabel.snp.bottom).offset(12)
             make.trailing.bottom.equalToSuperview().inset(16)
         }
-
     }
-    
     private func setupNavigationBar() {
         configureNavigationBar(
             title: NavBarTitle.title.rawValue,
             highlightedWord: NavBarTitle.highlightedWord.rawValue
         )
     }
-    
     // MARK: - TARGETS
-    
     @objc private func addButtonTapped() {
         customDelegate?.didAddButtonTapped()
     }
-    
     @objc private func editMessageButtonTapped() {
         customDelegate?.didEditButtonTapped()
     }

@@ -8,7 +8,6 @@
 import UIKit
 
 extension UIWindow {
-    
     /// Get current window
     static var current: UIWindow? {
         UIApplication.shared.connectedScenes

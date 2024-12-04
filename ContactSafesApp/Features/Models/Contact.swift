@@ -12,11 +12,9 @@ final class Contact: Object {
     @Persisted(primaryKey: true) var id: String = UUID().uuidString
     @Persisted var name: String
     @Persisted var phoneNumber: String
-    
     override init() {
         super.init()
     }
-    
     init(name: String, phoneNumber: String) {
         super.init()
         self.name = name

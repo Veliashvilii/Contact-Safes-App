@@ -8,7 +8,6 @@
 import UIKit
 
 final class MyContactsViewController: UIViewController, NavigationView, MainThreadRunner {
-    
     private var myContactsView: MyContactsView?
 
     override func viewDidLoad() {
@@ -30,12 +29,9 @@ extension MyContactsViewController: MyContactsViewDelegate {
             self?.present(addContactViewController)
         }
     }
-    
     func didEditButtonTapped() {
         print("Will editing to messages")
     }
-    
-    
 }
 
 #Preview {
