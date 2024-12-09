@@ -89,7 +89,8 @@ extension AddContactViewController: UITableViewDelegate, UITableViewDataSource {
 // MARK: - AddContactViewDelegate
 extension AddContactViewController: AddContactViewDelegate {
     func didTapPickContactButton() {
-        print("Will pick to contact...")
+        print("Tapped to pickUpButton")
+        viewModel.openContactPicker(in: self)
     }
     func didTappAddContactButton(name: String, phoneNumber: String) {
         if (ValidatorManager.shared.validatePhoneNumber(phoneNumber: phoneNumber)) {
