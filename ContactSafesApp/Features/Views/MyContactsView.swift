@@ -112,4 +112,9 @@ final class MyContactsView: BaseView<MyContactsViewController> {
     @objc private func editMessageButtonTapped() {
         customDelegate?.didEditButtonTapped()
     }
+    
+    // MARK: - Update Message Label
+    public func updateMessageLabel(with text: String) {
+        messageLabel.text = text
+    }
 }

@@ -58,6 +58,7 @@ final class MessagePageView: BaseView<MessagePageViewController> {
         }
         messageAddButton.snp.makeConstraints { make in
             make.bottom.equalTo(safeAreaLayoutGuide).offset(-padding)
+            make.centerX.equalTo(snp.centerX)
             make.width.equalTo(snp.width).multipliedBy(0.8)
             make.height.equalTo(buttonHeight)
         }

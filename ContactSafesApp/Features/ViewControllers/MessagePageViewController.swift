@@ -7,10 +7,15 @@
 
 import UIKit
 
+protocol MessagePageViewControllerDelegate: AnyObject {
+    func didSelectMessage(_ message: String)
+}
+
 final class MessagePageViewController: UIViewController {
     private var messageView: MessagePageView?
     private let messages = PresetMessage.groupedMessages
     private var sections: [String] = []
+    weak var delegate: MessagePageViewControllerDelegate?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,7 +26,6 @@ final class MessagePageViewController: UIViewController {
         messageView?.messagesTableView.rowHeight = UITableView.automaticDimension
         messageView?.delegate = self
         view = messageView
-        
         sections = Array(messages.keys).sorted()
     }
 }
@@ -29,7 +33,7 @@ final class MessagePageViewController: UIViewController {
 // MARK: - Delegate
 extension MessagePageViewController: BaseViewDelegate {
     func didTapButton() {
-        navigationController?.popViewController(animated: true)
+        print("Add Custom Message Button Tapped.")
     }
 }
 
@@ -39,11 +43,7 @@ extension MessagePageViewController: UITableViewDelegate {
         let section = sections[indexPath.section]
         guard let sectionMessages = messages[section] else { return }
         let selectedMessage = sectionMessages[indexPath.row]
-        
-        // Seçilen mesajı Message modeline çevirip delegate ile gönderebilirsiniz
-        let message = Message(text: selectedMessage.message, isActiveMessage: false)
-        // delegate?.messagePageViewController(self, didSelectMessage: message)
-        navigationController?.popViewController(animated: true)
+        delegate?.didSelectMessage(selectedMessage.message)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
@@ -85,12 +85,7 @@ extension MessagePageViewController: UITableViewDataSource {
             let message = Message(text: presetMessage.message, isActiveMessage: false)
             cell.configure(with: message)
         }
-        
         return cell
     }
-}
-
-// MARK: - Delegate Protocol
-protocol MessagePageViewControllerDelegate: AnyObject {
-    func messagePageViewController(_ controller: MessagePageViewController, didSelectMessage message: Message)
+    
 }
