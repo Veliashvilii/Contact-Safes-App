@@ -30,7 +30,11 @@ extension MyContactsViewController: MyContactsViewDelegate {
         }
     }
     func didEditButtonTapped() {
-        print("Will editing to messages")
+        runOnMainSafety { [weak self] in
+            print("Switch to Message Page View Controller")
+            let messagePageViewController = MessagePageViewController()
+            self?.present(messagePageViewController)
+        }
     }
 }
 

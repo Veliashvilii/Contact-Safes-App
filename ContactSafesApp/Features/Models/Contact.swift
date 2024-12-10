@@ -5,8 +5,8 @@
 //  Created by Metehan Veliashvili on 2.12.2024.
 //
 
-import RealmSwift
 import Foundation
+import RealmSwift
 
 final class Contact: Object {
     @Persisted(primaryKey: true) var id: String = UUID().uuidString
