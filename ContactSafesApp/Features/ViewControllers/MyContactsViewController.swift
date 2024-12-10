@@ -46,7 +46,3 @@ extension MyContactsViewController: MessagePageViewControllerDelegate {
         print("Message Label was updated!")
     }
 }
-
-#Preview {
-    MyContactsViewController()
-}
