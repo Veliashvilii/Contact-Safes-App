@@ -11,7 +11,7 @@ protocol MessagePageViewControllerDelegate: AnyObject {
     func didSelectMessage(_ message: String)
 }
 
-final class MessagePageViewController: UIViewController {
+final class MessagePageViewController: UIViewController, MainThreadRunner {
     private var messageView: MessagePageView?
     private let messages = PresetMessage.groupedMessages
     private var sections: [String] = []
@@ -25,7 +25,9 @@ final class MessagePageViewController: UIViewController {
         messageView?.messagesTableView.estimatedRowHeight = 100
         messageView?.messagesTableView.rowHeight = UITableView.automaticDimension
         messageView?.delegate = self
-        view = messageView
+        runOnMain { [weak self] in
+            self?.view = self?.messageView
+        }
         sections = Array(messages.keys).sorted()
     }
 }
