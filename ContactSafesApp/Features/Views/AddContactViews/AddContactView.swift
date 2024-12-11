@@ -36,6 +36,7 @@ final class AddContactView: BaseView<AddContactViewController> {
         let button = UIButton()
         button.setImage(UIImage(systemName: "person.crop.circle.badge.plus"), for: .normal)
         button.tintColor = .primary
+        button.addTarget(self, action: #selector(pickContactButtonTapped), for: .touchUpInside)
         return button
     }()
     private lazy var phoneTextField: UITextField = {
@@ -126,6 +127,7 @@ final class AddContactView: BaseView<AddContactViewController> {
             make.bottom.equalTo(safeAreaLayoutGuide)
         }
     }
+    
     @objc private func addButtonTapped() {
         guard let name = nameTextField.text, let phoneNumber = phoneTextField.text else {
             print("ERRROOOOOOOORORRRRR!!.1!:1:1")
@@ -134,6 +136,10 @@ final class AddContactView: BaseView<AddContactViewController> {
             return
         }
         customDelegate?.didTappAddContactButton(name: name, phoneNumber: phoneNumber)
+    }
+    
+    @objc private func pickContactButtonTapped() {
+        customDelegate?.didTapPickContactButton()
     }
     // MARK: - Public Methods
     func clearFields() {

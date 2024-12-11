@@ -30,10 +30,19 @@ extension MyContactsViewController: MyContactsViewDelegate {
         }
     }
     func didEditButtonTapped() {
-        print("Will editing to messages")
+        runOnMainSafety { [weak self] in
+            print("Switch to Message Page View Controller")
+            let messagePageViewController = MessagePageViewController()
+            messagePageViewController.delegate = self
+            self?.present(messagePageViewController)
+        }
     }
 }
 
-#Preview {
-    MyContactsViewController()
+// MARK: - BaseViewControllerDelegate
+extension MyContactsViewController: MessagePageViewControllerDelegate {
+    func didSelectMessage(_ message: String) {
+        myContactsView?.updateMessageLabel(with: message)
+        print("Message Label was updated!")
+    }
 }

@@ -7,7 +7,7 @@
 
 import UIKit
 
-final class MyContactsView: BaseView<MyContactsViewController> {
+final class MyContactsView: BaseView<MyContactsViewController>, MainThreadRunner {
     // MARK: - Delegate
     weak var customDelegate: MyContactsViewDelegate?
     // MARK: - Attributes
@@ -111,5 +111,11 @@ final class MyContactsView: BaseView<MyContactsViewController> {
     }
     @objc private func editMessageButtonTapped() {
         customDelegate?.didEditButtonTapped()
+    }
+    // MARK: - Update Message Label
+    public func updateMessageLabel(with text: String) {
+        runOnMain { [weak self] in
+            self?.messageLabel.text = text
+        }
     }
 }
