@@ -20,6 +20,8 @@ protocol ContactViewModelProtocol: AnyObject {
     func deleteContact(at index: Int)
     func handleContactSelection(contact: CNContact)
     func openContactPicker(in viewController: UIViewController)
+    func updateActiveMessage(with text: String)
+    func getActiveMessage() -> String?
 }
 
 // MARK: - ViewModel Implementation
@@ -127,6 +129,14 @@ final class ContactViewModel: NSObject, ContactViewModelProtocol {
         }
         addContact(name: contactInfo.name, phoneNumber: contactInfo.phoneNumber)
     }
+    
+    func updateActiveMessage(with text: String) {
+        UserDefaults.standard.set(text, forKey: "activeMessage")
+    }
+    
+    func getActiveMessage() -> String? {
+        return UserDefaults.standard.string(forKey: "activeMessage")
+    }
 }
 
 // MARK: - CNContactPickerDelegate
@@ -138,3 +148,4 @@ extension ContactViewModel: CNContactPickerDelegate {
         print("Contact selection cancelled")
     }
 }
+

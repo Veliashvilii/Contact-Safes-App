@@ -9,6 +9,7 @@ import UIKit
 
 final class MyContactsViewController: UIViewController, NavigationView, MainThreadRunner {
     private var myContactsView: MyContactsView?
+    private var viewModel = ContactViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -17,6 +18,8 @@ final class MyContactsViewController: UIViewController, NavigationView, MainThre
             self.view = self.myContactsView
         }
         myContactsView?.customDelegate = self
+        
+        if let savedMessage = viewModel.getActiveMessage() { myContactsView?.updateMessageLabel(with: savedMessage) }
     }
 }
 
@@ -43,6 +46,7 @@ extension MyContactsViewController: MyContactsViewDelegate {
 extension MyContactsViewController: MessagePageViewControllerDelegate {
     func didSelectMessage(_ message: String) {
         myContactsView?.updateMessageLabel(with: message)
+        viewModel.updateActiveMessage(with: message)
         print("Message Label was updated!")
     }
 }

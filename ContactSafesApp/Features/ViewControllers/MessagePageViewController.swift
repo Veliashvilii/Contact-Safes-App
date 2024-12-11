@@ -46,6 +46,7 @@ extension MessagePageViewController: UITableViewDelegate {
         guard let sectionMessages = messages[section] else { return }
         let selectedMessage = sectionMessages[indexPath.row]
         delegate?.didSelectMessage(selectedMessage.message)
+        dismiss(animated: true)
     }
     
     func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
