@@ -7,8 +7,7 @@
 
 import UIKit
 
-class OnBoardingViewController: UIViewController, NavigationView, MainThreadRunner {
-    
+final class OnBoardingViewController: UIViewController, NavigationView, MainThreadRunner {
     private var currentPage: OnboardingSlide = .first {
         didSet {
             runOnMainSafety { [weak self] in
@@ -16,20 +15,16 @@ class OnBoardingViewController: UIViewController, NavigationView, MainThreadRunn
             }
         }
     }
-    
     private var onBoardingView: BaseOnboardingView?
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         setupInitialView()
     }
-    
     private func setupInitialView() {
         onBoardingView = BaseOnboardingView(self, slide: currentPage)
         onBoardingView?.delegate = self
         view = onBoardingView
     }
-    
     private func updateView() {
         runOnMainSafety { [weak self] in
             guard let self = self else { return }
@@ -59,8 +54,3 @@ extension OnBoardingViewController: BaseViewDelegate {
         }
     }
 }
-
-/**#Preview {
-    OnBoardingViewController()
-}
-*/

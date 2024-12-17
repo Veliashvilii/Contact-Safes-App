@@ -11,7 +11,6 @@ enum ShadowRadius: Int {
     case small = 10
     case medium = 20
     case large = 30
-    
     var size: CGFloat {
         CGFloat(self.rawValue)
     }

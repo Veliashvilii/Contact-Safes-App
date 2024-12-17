@@ -9,8 +9,6 @@ import UIKit
 
 final class HomePageView: BaseView<HomePageViewController> {
     // MARK: - Delegate
-    //weak var delegate: BaseViewDelegate?
-    
     private lazy var homePageButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = BaseOnboardingView.currentTheme.buttonTheme.backgroundColor
@@ -21,16 +19,13 @@ final class HomePageView: BaseView<HomePageViewController> {
         button.titleLabel?.textColor = .white
         button.titleLabel?.textAlignment = .center
         button.layer.cornerRadius = CornerRadius.big.size
-        
         button.layer.shadowColor = UIColor.black.cgColor
         button.layer.shadowOffset = CGSize(width: 5, height: 5)
         button.layer.shadowOpacity = ShadowOpacity.small.size
         button.layer.shadowRadius = ShadowRadius.small.size
-        
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }()
-    
     override func setupView() {
         super.setupView()
         setupLayout()

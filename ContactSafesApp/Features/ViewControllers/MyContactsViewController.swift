@@ -7,17 +7,46 @@
 
 import UIKit
 
-class MyContactsViewController: UIViewController {
-    
+final class MyContactsViewController: UIViewController, NavigationView, MainThreadRunner {
     private var myContactsView: MyContactsView?
+    private var viewModel = ContactViewModel()
 
     override func viewDidLoad() {
         super.viewDidLoad()
         myContactsView = MyContactsView(self)
-        view = myContactsView
+        runOnMain {
+            self.view = self.myContactsView
+        }
+        myContactsView?.customDelegate = self
+        
+        if let savedMessage = viewModel.getActiveMessage() { myContactsView?.updateMessageLabel(with: savedMessage) }
     }
 }
 
-#Preview {
-    MyContactsViewController()
+// MARK: - CustomDelegate
+extension MyContactsViewController: MyContactsViewDelegate {
+    func didAddButtonTapped() {
+        runOnMainSafety {  [weak self] in
+            print("Switch to Add Contact View Controller")
+            let addContactViewController = AddContactViewController()
+            self?.present(addContactViewController)
+        }
+    }
+    func didEditButtonTapped() {
+        runOnMainSafety { [weak self] in
+            print("Switch to Message Page View Controller")
+            let messagePageViewController = MessagePageViewController()
+            messagePageViewController.delegate = self
+            self?.present(messagePageViewController)
+        }
+    }
+}
+
+// MARK: - BaseViewControllerDelegate
+extension MyContactsViewController: MessagePageViewControllerDelegate {
+    func didSelectMessage(_ message: String) {
+        myContactsView?.updateMessageLabel(with: message)
+        viewModel.updateActiveMessage(with: message)
+        print("Message Label was updated!")
+    }
 }

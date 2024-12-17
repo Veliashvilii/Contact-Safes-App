@@ -9,12 +9,8 @@ import UIKit
 import SnapKit
 
 final class BaseOnboardingView: BaseView<OnBoardingViewController> {
-    // MARK: - Delegate
-    //weak var delegate: BaseViewDelegate?
-    
     // MARK: - Properties
     private let slide: OnboardingSlide
-    
     // MARK: - UI Components
     private lazy var imageContainerView: UIView = {
         let view = UIView()
@@ -23,14 +19,12 @@ final class BaseOnboardingView: BaseView<OnBoardingViewController> {
         view.backgroundColor = .systemBackground
         return view
     }()
-    
     private lazy var onBoardingImageView: UIImageView = {
         let imageView = UIImageView(image: slide.image)
         imageView.contentMode = .scaleAspectFill
         imageView.clipsToBounds = true
         return imageView
     }()
-    
     private lazy var onBoardingTitleLabel: UILabel = {
         let label = UILabel()
         label.text = slide.title
@@ -40,7 +34,6 @@ final class BaseOnboardingView: BaseView<OnBoardingViewController> {
         label.textAlignment = .center
         return label
     }()
-    
     private lazy var onBoardingSubTitleLabel: UILabel = {
         let label = UILabel()
         label.text = slide.subTitle
@@ -49,7 +42,6 @@ final class BaseOnboardingView: BaseView<OnBoardingViewController> {
         label.textAlignment = .center
         return label
     }()
-    
     private lazy var onBoardingButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = BaseOnboardingView.currentTheme.buttonTheme.backgroundColor
@@ -61,7 +53,6 @@ final class BaseOnboardingView: BaseView<OnBoardingViewController> {
         button.addTarget(self, action: #selector(buttonTapped), for: .touchUpInside)
         return button
     }()
-    
     private lazy var columnStackView: UIStackView = {
         let stackView = UIStackView(arrangedSubviews: [onBoardingTitleLabel, onBoardingSubTitleLabel, onBoardingButton])
         stackView.axis = .vertical
@@ -69,52 +60,41 @@ final class BaseOnboardingView: BaseView<OnBoardingViewController> {
         stackView.distribution = .equalSpacing
         return stackView
     }()
-    
     // MARK: - Init
     init(_ controller: OnBoardingViewController, slide: OnboardingSlide) {
         self.slide = slide
         super.init(controller)
     }
-    
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
     // MARK: - Setup
     override func setupView() {
         super.setupView()
         setupLayout()
         setupConstraints()
     }
-    
     private func setupLayout() {
         addSubview(imageContainerView)
         imageContainerView.addSubview(onBoardingImageView)
         addSubview(columnStackView)
     }
-    
     private func setupConstraints() {
         imageContainerView.snp.makeConstraints { make in
-            //make.top.equalTo(safeAreaLayoutGuide.snp.top).offset(20)
             make.centerX.centerY.equalToSuperview()
             make.width.equalTo(snp.width).multipliedBy(0.8)
             make.height.equalTo(imageContainerView.snp.width)
         }
-        
         onBoardingImageView.snp.makeConstraints { make in
             make.edges.equalToSuperview()
         }
-        
         columnStackView.snp.makeConstraints { make in
             make.top.equalTo(imageContainerView.snp.bottom).offset(30)
             make.left.right.equalToSuperview().inset(20)
-            //make.bottom.lessThanOrEqualTo(safeAreaLayoutGuide.snp.bottom).offset(-20)
         }
     }
-    
     // MARK: - Actions
     @objc private func buttonTapped() {
         delegate?.didTapButton()
     }
 }
-

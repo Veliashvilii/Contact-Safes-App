@@ -21,7 +21,6 @@ extension NavigationBarConfigurable {
                 .foregroundColor: ThemeColor.defaultTheme.textColor
             ]
         )
-        
         if let highlightedWord = highlightedWord,
            let range = title.range(of: highlightedWord) {
             let nsRange = NSRange(range, in: title)
@@ -31,7 +30,6 @@ extension NavigationBarConfigurable {
                 range: nsRange
             )
         }
-        
         titleLabel.attributedText = attributedText
         titleLabel.textAlignment = .center
         return titleLabel

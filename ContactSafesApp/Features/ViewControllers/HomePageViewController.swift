@@ -6,10 +6,11 @@
 //
 
 import UIKit
+import MessageUI
 
-class HomePageViewController: UIViewController {
-    
+final class HomePageViewController: UIViewController {
     private var homePageView: HomePageView?
+    private let viewModel: ContactViewModelProtocol = ContactViewModel() // ViewModel örneği
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,9 +22,30 @@ class HomePageViewController: UIViewController {
 
 extension HomePageViewController: BaseViewDelegate {
     func didTapButton() {
-        // TODO: - Will Send Messages
-        print("Will Send Messages")
+        guard let activeMessage = viewModel.getActiveMessage() else {
+            print("No active message selected.")
+            return
+        }
+        let selectedContacts = viewModel.contacts
+        print("Selected Contacts: \(selectedContacts)")
+        viewModel.sendMessage(to: selectedContacts, message: activeMessage, from: self)
     }
-    
-    
+}
+
+// MARK: - MFMessageComposeViewControllerDelegate
+extension HomePageViewController: MFMessageComposeViewControllerDelegate {
+    func messageComposeViewController(_ controller: MFMessageComposeViewController, didFinishWith result: MessageComposeResult) {
+        controller.dismiss(animated: true, completion: nil)
+        
+        switch result {
+        case .cancelled:
+            print("Message sending cancelled.")
+        case .failed:
+            print("Message sending failed for an unknown reason.")
+        case .sent:
+            print("Message sent successfully.")
+        @unknown default:
+            print("Unknown result.")
+        }
+    }
 }

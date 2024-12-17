@@ -11,7 +11,6 @@ enum ShadowOpacity: CGFloat {
     case small = 0.3
     case medium = 0.6
     case large = 0.9
-    
     var size: Float {
         Float(self.rawValue)
     }

@@ -12,7 +12,6 @@ enum OnboardingSlide {
     case first
     case second
     case third
-    
     var title: String {
         switch self {
         case .first:
@@ -23,7 +22,6 @@ enum OnboardingSlide {
             return "Stay Connected in Tough Times"
         }
     }
-    
     var subTitle: String {
         switch self {
         case .first:
@@ -34,7 +32,6 @@ enum OnboardingSlide {
             return "Ensure help is just a message away when you need it most."
         }
     }
-    
     var buttonTitle: String {
         switch self {
         case .first:
@@ -45,7 +42,6 @@ enum OnboardingSlide {
             return "Finish"
         }
     }
-    
     var image: UIImage? {
         switch self {
         case .first:
