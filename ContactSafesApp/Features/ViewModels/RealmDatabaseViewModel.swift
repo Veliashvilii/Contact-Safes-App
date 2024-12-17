@@ -9,6 +9,7 @@ import UIKit
 import Contacts
 import ContactsUI
 import RealmSwift
+import MessageUI
 
 // MARK: - Protocol
 protocol ContactViewModelProtocol: AnyObject {
@@ -22,6 +23,7 @@ protocol ContactViewModelProtocol: AnyObject {
     func openContactPicker(in viewController: UIViewController)
     func updateActiveMessage(with text: String)
     func getActiveMessage() -> String?
+    func sendMessage(to contacts: [Contact], message: String, from viewController: UIViewController)
 }
 
 // MARK: - ViewModel Implementation
@@ -136,6 +138,20 @@ final class ContactViewModel: NSObject, ContactViewModelProtocol {
     
     func getActiveMessage() -> String? {
         return UserDefaults.standard.string(forKey: "activeMessage")
+    }
+    
+    func sendMessage(to contacts: [Contact], message: String, from viewController: UIViewController) {
+        guard MFMessageComposeViewController.canSendText() else {
+            print("SMS services are not available.")
+            return
+        }
+        
+        let messageVC = MFMessageComposeViewController()
+        messageVC.body = message
+        messageVC.recipients = contacts.map { $0.phoneNumber }
+        messageVC.messageComposeDelegate = viewController as? MFMessageComposeViewControllerDelegate
+        
+        viewController.present(messageVC, animated: true, completion: nil)
     }
 }
 
