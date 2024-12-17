@@ -67,12 +67,10 @@ extension MessagePageViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
         return sections.count
     }
-    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         let sectionKey = sections[section]
         return messages[sectionKey]?.count ?? 0
     }
-    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         guard let cell = tableView.dequeueReusableCell(
             withIdentifier: MessageCell.identifier,
@@ -80,7 +78,6 @@ extension MessagePageViewController: UITableViewDataSource {
         ) as? MessageCell else {
             return UITableViewCell()
         }
-        
         let section = sections[indexPath.section]
         if let sectionMessages = messages[section] {
             let presetMessage = sectionMessages[indexPath.row]
@@ -90,5 +87,4 @@ extension MessagePageViewController: UITableViewDataSource {
         }
         return cell
     }
-    
 }
