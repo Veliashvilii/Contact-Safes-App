@@ -13,22 +13,32 @@ ContactSafesApp is an iOS application designed to help users connect with their 
 ## Screenshots
 Here are some screenshots of the application:
 
-![Onboarding Screen 1](img/onboarding1.png)
-![Onboarding Screen 2](img/onboarding2.png)
-![Onboarding Screen 3](img/onboarding3.png)
-*Onboarding Screen*
+<p align="center">
+  <img src="img/onboarding1.png" alt="Onboarding Screen 1" width="300"/>
+  <img src="img/onboarding2.png" alt="Onboarding Screen 2" width="300"/>
+  <img src="img/onboarding3.png" alt="Onboarding Screen 3" width="300"/>
+  <br>*Onboarding Screen*
+</p>
 
-![Main Screen](img/main.png)
-*Main Screen*
+<p align="center">
+  <img src="img/main.png" alt="Main Screen" width="300"/>
+  <br>*Main Screen*
+</p>
 
-![My Contacts Screen](img/mycontacts.png)
-*My Contacts Screen*
+<p align="center">
+  <img src="img/mycontacts.png" alt="My Contacts Screen" width="300"/>
+  <br>*My Contacts Screen*
+</p>
 
-![Add Contacts Screen](img/contacts.png)
-*Add Contacts Screen*
+<p align="center">
+  <img src="img/contacts.png" alt="Add Contacts Screen" width="300"/>
+  <br>*Add Contacts Screen*
+</p>
 
-![Message Screen](img/message.png)
-*Message Screen*
+<p align="center">
+  <img src="img/message.png" alt="Message Screen" width="300"/>
+  <br>*Message Screen*
+</p>
 
 ## Installation
 To install and run the ContactSafesApp, follow these steps:
