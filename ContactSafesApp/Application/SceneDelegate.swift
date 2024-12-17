@@ -11,15 +11,12 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
     var window: UIWindow?
 
-
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
         guard let windowScene = (scene as? UIWindowScene) else { return }
         let window = UIWindow(windowScene: windowScene)
         
-        let viewController = ViewController()
-        let navigationController = UINavigationController(rootViewController: viewController)
-        
-        window.rootViewController = navigationController
+        let viewController = OnBoardingViewController()
+        window.rootViewController = viewController
         window.makeKeyAndVisible()
         
         window.overrideUserInterfaceStyle = .light
@@ -54,7 +51,4 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
-
-
 }
-
