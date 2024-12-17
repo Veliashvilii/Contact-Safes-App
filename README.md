@@ -13,32 +13,21 @@ ContactSafesApp is an iOS application designed to help users connect with their 
 ## Screenshots
 Here are some screenshots of the application:
 
-<p align="center">
-  <img src="img/onboarding1.png" alt="Onboarding Screen 1" width="300"/>
-  <img src="img/onboarding2.png" alt="Onboarding Screen 2" width="300"/>
-  <img src="img/onboarding3.png" alt="Onboarding Screen 3" width="300"/>
-  <br>*Onboarding Screen*
-</p>
-
-<p align="center">
-  <img src="img/main.png" alt="Main Screen" width="300"/>
-  <br>*Main Screen*
-</p>
-
-<p align="center">
-  <img src="img/mycontacts.png" alt="My Contacts Screen" width="300"/>
-  <br>*My Contacts Screen*
-</p>
-
-<p align="center">
-  <img src="img/contacts.png" alt="Add Contacts Screen" width="300"/>
-  <br>*Add Contacts Screen*
-</p>
-
-<p align="center">
-  <img src="img/message.png" alt="Message Screen" width="300"/>
-  <br>*Message Screen*
-</p>
+<table align="center">
+  <tr>
+    <td align="center"><img src="img/onboarding1.png" alt="Onboarding Screen 1" width="250"/><br>Onboarding 1</td>
+    <td align="center"><img src="img/onboarding2.png" alt="Onboarding Screen 2" width="250"/><br>Onboarding 2</td>
+    <td align="center"><img src="img/onboarding3.png" alt="Onboarding Screen 3" width="250"/><br>Onboarding 3</td>
+  </tr>
+  <tr>
+    <td align="center"><img src="img/main.png" alt="Main Screen" width="250"/><br>Main Screen</td>
+    <td align="center"><img src="img/mycontacts.png" alt="My Contacts Screen" width="250"/><br>My Contacts</td>
+    <td align="center"><img src="img/contacts.png" alt="Add Contacts Screen" width="250"/><br>Add Contacts</td>
+  </tr>
+  <tr>
+    <td align="center" colspan="3"><img src="img/message.png" alt="Message Screen" width="250"/><br>Message Screen</td>
+  </tr>
+</table>
 
 ## Installation
 To install and run the ContactSafesApp, follow these steps:
